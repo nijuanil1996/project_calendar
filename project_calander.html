@@ -1,116 +1,66 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    
-  
-    <link rel="stylesheet" href="project_calander.css">
-
-   
-    
-  
-</head>
-
-<body>
-  <!DOCTYPE html>
-<html>
-
-<body>
-  <div class="month">
-    <ul>
-      <li class="prev">&#10094;</li>
-      <li class="next">&#10095;</li>
-      <li>MAY<br><span style="font-size:18px">2021</span></li>
-    </ul>
-  </div>
-  
-	<table bgcolor="lightgrey" align="center"
-		cellspacing="20" cellpadding="19">
-		
-		
-
-		<caption align="top">
-			
-		</caption>
-
-		
-
-		<thead>
-      
-			<tr>
-				
-				<th>Sun</th>
-				<th>Mon</th>
-				<th>Tue</th>
-				<th>Wed</th>
-				<th>Thu</th>
-				<th>Fri</th>
-				<th>sat</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>1</td>
-				<td>2</td>
-			</tr>
-			<tr></tr>
-			<tr>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
-				<td>8</td>
-				<td>9</td>
-			</tr>
-			<tr>
-				<td>10</td>
-				<td>11</td>
-				<td>12</td>
-				<td>13</td>
-				<td>14</td>
-				<td>15</td>
-				<td>16</td>
-			</tr>
-			<tr>
-				<td>17</td>
-				<td>18</td>
-				<td>19</td>
-				<td>20</td>
-				<td>21</td>
-				<td>22</td>
-				<td>23</td>
-			</tr>
-			<tr>
-				<td>24</td>
-				<td>25</td>
-				<td>26</td>
-				<td>27</td>
-				<td>28</td>
-				<td>29</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>31</td>
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-			</tr>
-		</tbody>
-	</table>
-</body>
-
-</html>
-
-</body>
-
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Calendar</title>
+        <link rel='stylesheet' href='project_calander.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='calendar'>
+                <div class='date-header'>
+                    <span id='prev' class='time-skip'>prev</span>
+                    <div class='year-month'>
+                        <span class='month'></span>
+                        <span class='year'></span>
+                    </div>
+                    <span id='next' class='time-skip'>next</span>
+                </div>
+                <table class='days-body'>
+                    <thead>
+                        <tr class='days-row'>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody class='calendar-days'></tbody>
+                </table>
+                <form class='select-date'>
+                    <label for='month'>Go To: </label>
+                    <select name='month' id='month'>
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+                    <input type='number' min='1' id='year'>
+                </form>
+            </div>
+            <div class='event-container'>
+                <div class='events visible'>
+                    <span class='no-Events event-message'>There are no events today</span>
+                    <button class='show-event-form rotate'>Add new event</button>
+                </div>
+                <form class='new-event-form hidden'>
+                    <legend>Submit New Event</legend>
+                    <input id='new-event-desc' type='text' name='desc' placeholder='desc'>
+                    <input type='submit' class='submit-event rotate' value='submit'>
+                </form>
+            </div>
+        </div>
+        <script type='text/javascript' src='project_calander.js' async></script>
+    </body>
 </html>
